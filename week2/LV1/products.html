@@ -63,7 +63,9 @@
                 </td>
                 <td width="150">
                   <!–– https://stackoverflow.com/questions/11050269/fixed-width-buttons-with-bootstrap ––>
-                  <button type="button" class="btn btn-success button-size" :class="{'btn-success': item.is_enabled, 'btn-light': !item.is_enabled }" @click="item.is_enabled = !item.is_enabled" >{{ item.is_enabled ? '啟用' : '未啟用' }}</button>
+                  <!-- <button type="button" class="btn btn-success button-size" :class="{'btn-success': item.is_enabled, 'btn-light': !item.is_enabled }" @click="item.is_enabled = !item.is_enabled" >{{ item.is_enabled ? '啟用' : '未啟用' }}</button> -->
+                  <span v-if="item.is_enabled" class="text-success">啟用</span>
+                  <span v-else>未啟用</span>
                 </td>
                 <td width="120">
                   <button type="button" class="btn btn-primary" @click="openProduct(item)">查看細節</button>
